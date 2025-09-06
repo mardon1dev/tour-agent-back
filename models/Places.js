@@ -6,6 +6,10 @@ const placeSchema = new mongoose.Schema({
   description: String,
   is_available: { type: Boolean, default: true },
   created_at: { type: Date, default: Date.now },
+  // 👇 Add image fields
+  imageUrl: String, // for one image
+  // OR:
+  images: [String], // for multiple images
 });
 
 module.exports = mongoose.model("Place", placeSchema);
